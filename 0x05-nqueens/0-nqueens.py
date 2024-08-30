@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+N queens challenge
+"""
 import sys
 
 
