@@ -3,7 +3,7 @@
 const request = require('request');
 
 const movieId = process.argv[2];
-const url = `https://swapi.dev/api/films/${movieId}/`;
+const url = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 function fetchData (url) {
   return new Promise((resolve, reject) => {
