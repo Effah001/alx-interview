@@ -8,18 +8,12 @@ that returns the perimeter of the island described in grid:
 def island_perimeter(grid):
     """Island perimeter function"""
     perimeter = 0
-    rows = len(grid)
-    cols = len(grid[0]) if rows > 0 else 0
-    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-
-    for r in range(rows):
-        for c in range(cols):
+    for r in range(len(grid)):
+        for c in range(len(grid[r])):
             if grid[r][c] == 1:
-                for dr, dc in directions:
-                    nr, nc = r + dr, c + dc
-                    if (nr < 0 or nr >= rows or nc < 0 or
-                        nc >= cols or
-                        grid[nr][nc] == 0):
-                        perimeter += 1
-
+                perimeter += 4
+                if r > 0 and grid[r-1][c] == 1:
+                    perimeter -= 2
+                if c > 0 and grid[r][c-1] == 1:
+                    perimeter -= 2
     return perimeter
